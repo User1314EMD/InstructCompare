@@ -1,0 +1,17 @@
+import { Link } from 'react-router-dom'
+
+export default function Header() {
+  return (
+    <header className="site-header">
+      <div className="site-header-inner">
+        <Link to="/" className="site-logo">InstructCompare</Link>
+        <nav>
+          <ul className="nav-links">
+            <li><Link to="/">Главная</Link></li>
+            <li><Link to="/catalog">Каталог</Link></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  )
+}
