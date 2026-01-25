@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Рейтинг: общая сводка (sum, count)
+    match /stats/{document=**} {
+      allow read, write: if true;
+    }
+    // Голоса пользователей (по clientId)
+    match /votes/{userId} {
+      allow read, write: if true;
+    }
+  }
+}

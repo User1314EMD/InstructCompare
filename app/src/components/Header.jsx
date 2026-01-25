@@ -8,8 +8,9 @@ export default function Header() {
         <nav>
           <ul className="nav-links">
             <li><Link to="/">Главная</Link></li>
-            <li><Link to="/catalog">Каталог</Link></li>
-          </ul>
+<li><Link to="/catalog">Каталог</Link></li>
+            <li><Link to="/rating">Оценка</Link></li>
+        </ul>
         </nav>
       </div>
     </header>

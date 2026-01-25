@@ -175,6 +175,41 @@ a:hover { text-decoration: underline; }
 .instruction-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 0.5rem; }
 .instruction-meta span { background: #f1f5f9; padding: 0.25rem 0.5rem; border-radius: 4px; }
 
+/* === Оценка / голосование === */
+.rating-page { max-width: 480px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+.rating-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+.rating-card h1 { font-size: 1.5rem; font-weight: 700; margin: 0 0 0.5rem; }
+.rating-desc { color: var(--color-text-muted); font-size: 0.95rem; margin: 0 0 1.75rem; }
+.rating-buttons { display: flex; gap: 0.5rem; margin-bottom: 2rem; }
+.rating-btn {
+  flex: 1;
+  aspect-ratio: 1;
+  max-width: 4rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--color-text-muted);
+  background: #f1f5f9;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.rating-btn:hover { color: var(--color-accent); border-color: var(--color-accent); background: #e0f2fe; transform: translateY(-2px); }
+.rating-btn.rating-btn-active { color: #fff; background: var(--color-accent); border-color: var(--color-accent); }
+.rating-results { padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
+.rating-avg { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem; }
+.rating-avg-value { font-size: 2rem; font-weight: 700; color: var(--color-text); }
+.rating-avg-label { font-size: 0.9rem; color: var(--color-text-muted); }
+.rating-meta { font-size: 0.85rem; color: var(--color-text-muted); }
+.rating-meta .rating-yours { margin-left: 1rem; color: var(--color-accent); font-weight: 500; }
+
 /* === Подвал === */
 .site-footer {
   max-width: var(--max-width);

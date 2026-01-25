@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оценка сайта — InstructCompare</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-logo">InstructCompare</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="rating.html">Оценка</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="rating-page">
+    <div class="rating-card">
+      <h1>Оцените сайт</h1>
+      <p class="rating-desc">Нажмите на оценку от 1 до 5. Результаты обновятся сразу.</p>
+
+      <div class="rating-buttons" id="rating-buttons">
+        <button type="button" class="rating-btn" data-value="1">1</button>
+        <button type="button" class="rating-btn" data-value="2">2</button>
+        <button type="button" class="rating-btn" data-value="3">3</button>
+        <button type="button" class="rating-btn" data-value="4">4</button>
+        <button type="button" class="rating-btn" data-value="5">5</button>
+      </div>
+
+      <div class="rating-results" id="rating-results">
+        <div class="rating-avg">
+          <span class="rating-avg-value" id="rating-avg-value">—</span>
+          <span class="rating-avg-label">Средняя оценка</span>
+        </div>
+        <div class="rating-meta">
+          <span id="rating-total">0 оценок</span>
+          <span class="rating-yours" id="rating-yours"></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    InstructCompare. Демонстрационный проект.
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/rating.js"></script>
+</body>
+</html>
