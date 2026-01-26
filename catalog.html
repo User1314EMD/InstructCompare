@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — InstructCompare</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-logo">InstructCompare</a>
+      <nav>
+        <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="rating.html">Оценка</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>Каталог инструкций</h1>
+      <p>Выберите инструкцию для просмотра описания, анализа и вывода. Используйте фильтры для поиска.</p>
+    </div>
+
+    <div class="filters-panel">
+      <div class="filters">
+        <div class="search-wrap">
+          <label for="search-input">Поиск</label>
+          <input type="text" id="search-input" class="search-input" placeholder="Авиакомпания, самолёт, страна…" autocomplete="off">
+        </div>
+        <div class="filter-group">
+          <label for="filter-airline">Авиакомпания</label>
+          <select id="filter-airline">
+            <option value="">Все</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-aircraft">Тип самолёта</label>
+          <select id="filter-aircraft">
+            <option value="">Все</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-country">Страна</label>
+          <select id="filter-country">
+            <option value="">Все</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-year">Год</label>
+          <select id="filter-year">
+            <option value="">Все</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="catalog">
+      <p class="catalog-results" id="catalog-results"></p>
+      <div class="catalog-grid" id="catalog-grid"></div>
+      <p class="catalog-empty" id="catalog-empty" style="display: none;">
+        По выбранным фильтрам инструкций не найдено.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    InstructCompare. Демонстрационный проект.
+  </footer>
+
+  <script src="js/catalog.js"></script>
+</body>
+</html>
