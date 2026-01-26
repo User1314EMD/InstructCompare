@@ -11,30 +11,43 @@
 
   function init() {
     var instructionId = getQueryParam("id");
-    if (!instructionId) return;
+    if (!instructionId) {
+      console.warn("instruction-rating: no instructionId in URL");
+      return;
+    }
 
     var buttons = document.getElementById("instruction-rating-buttons");
     var avgEl = document.getElementById("instruction-rating-avg");
     var totalEl = document.getElementById("instruction-rating-total");
     var yoursEl = document.getElementById("instruction-rating-yours");
 
-    if (!buttons || !avgEl || !totalEl || !yoursEl) return;
+    if (!buttons || !avgEl || !totalEl || !yoursEl) {
+      console.warn("instruction-rating: elements not found", { buttons: !!buttons, avgEl: !!avgEl, totalEl: !!totalEl, yoursEl: !!yoursEl });
+      return;
+    }
 
     var db = null;
     var useFirebase = false;
 
-    if (typeof FIREBASE_CONFIG !== "undefined" && FIREBASE_CONFIG && FIREBASE_CONFIG.apiKey && FIREBASE_CONFIG.apiKey !== "YOUR_API_KEY" && FIREBASE_CONFIG.projectId && FIREBASE_CONFIG.projectId !== "your-project-id") {
-      try {
-        if (typeof firebase !== "undefined") {
-          try {
-            firebase.initializeApp(FIREBASE_CONFIG);
-          } catch (e) {
-            if (e.code !== "app/duplicate-app") throw e;
+    function initFirebase() {
+      if (typeof FIREBASE_CONFIG !== "undefined" && FIREBASE_CONFIG && FIREBASE_CONFIG.apiKey && FIREBASE_CONFIG.apiKey !== "YOUR_API_KEY" && FIREBASE_CONFIG.projectId && FIREBASE_CONFIG.projectId !== "your-project-id") {
+        try {
+          if (typeof firebase !== "undefined" && firebase.firestore) {
+            try {
+              firebase.initializeApp(FIREBASE_CONFIG);
+            } catch (e) {
+              if (e.code !== "app/duplicate-app") throw e;
+            }
+            db = firebase.firestore();
+            useFirebase = true;
+            return true;
           }
-          db = firebase.firestore();
-          useFirebase = true;
+        } catch (e) {
+          console.warn("instruction-rating: Firebase init error", e);
+          useFirebase = false;
         }
-      } catch (e) { useFirebase = false; }
+      }
+      return false;
     }
 
     function getClientId() {
@@ -88,8 +101,8 @@
       renderUI(sum / votes.length, votes.length, val);
     }
 
-    var statsRef = db && db.collection("instructionStats").doc(instructionId);
-    var votesRef = function () { return db && db.collection("instructionVotes").doc(getClientId() + "_" + instructionId); };
+    var statsRef = null;
+    var votesRef = null;
 
     function loadFromFirebase(cb) {
       if (!db || !statsRef) { if (cb) cb(0, 0, null); return; }
@@ -139,24 +152,49 @@
       else onVoteLocal(val);
     }
 
-    if (buttons) {
-      buttons.addEventListener("click", function (e) {
-        var btn = e.target.closest(".rating-btn-small");
-        if (!btn) return;
-        var v = parseInt(btn.getAttribute("data-value"), 10);
-        if (v >= 1 && v <= 5) onVote(v);
-      });
+    function startRating() {
+      if (useFirebase && db) {
+        statsRef = db.collection("instructionStats").doc(instructionId);
+        votesRef = function () { return db.collection("instructionVotes").doc(getClientId() + "_" + instructionId); };
+        avgEl.textContent = "…";
+        loadFromFirebase(function (sum, count, user) {
+          renderUI(count > 0 ? sum / count : 0, count, user);
+        });
+      } else {
+        var votes = getLocalVotes();
+        var sum = votes.reduce(function (a, b) { return a + b; }, 0);
+        renderUI(sum / votes.length, votes.length, getLocalUser());
+      }
+
+      if (buttons) {
+        buttons.addEventListener("click", function (e) {
+          var btn = e.target.closest(".rating-btn-small");
+          if (!btn) return;
+          var v = parseInt(btn.getAttribute("data-value"), 10);
+          if (v >= 1 && v <= 5) {
+            onVote(v);
+          }
+        });
+      }
     }
 
-    if (useFirebase && db) {
-      avgEl.textContent = "…";
-      loadFromFirebase(function (sum, count, user) {
-        renderUI(count > 0 ? sum / count : 0, count, user);
-      });
+    if (typeof firebase !== "undefined") {
+      initFirebase();
+      startRating();
     } else {
-      var votes = getLocalVotes();
-      var sum = votes.reduce(function (a, b) { return a + b; }, 0);
-      renderUI(sum / votes.length, votes.length, getLocalUser());
+      var checkFirebase = setInterval(function () {
+        if (typeof firebase !== "undefined") {
+          clearInterval(checkFirebase);
+          initFirebase();
+          startRating();
+        }
+      }, 100);
+      setTimeout(function () {
+        clearInterval(checkFirebase);
+        if (!useFirebase) {
+          startRating();
+        }
+      }, 5000);
     }
   }
 
