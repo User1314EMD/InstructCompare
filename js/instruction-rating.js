@@ -148,8 +148,32 @@
 
     function onVote(val) {
       if (val < 1 || val > 5) return;
+      console.log("instruction-rating: onVote called with", val);
       if (useFirebase && db) onVoteFirebase(val);
       else onVoteLocal(val);
+    }
+
+    // Добавляем обработчик клика сразу, не дожидаясь Firebase
+    if (buttons) {
+      buttons.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var btn = e.target.closest(".rating-btn-small");
+        if (!btn) {
+          // Если closest не сработал, проверяем сам target
+          if (e.target.classList && e.target.classList.contains("rating-btn-small")) {
+            btn = e.target;
+          } else {
+            return;
+          }
+        }
+        var v = parseInt(btn.getAttribute("data-value"), 10);
+        console.log("instruction-rating: button clicked, value:", v);
+        if (v >= 1 && v <= 5) {
+          onVote(v);
+        }
+      });
+      console.log("instruction-rating: click handler attached");
     }
 
     function startRating() {
@@ -164,17 +188,6 @@
         var votes = getLocalVotes();
         var sum = votes.reduce(function (a, b) { return a + b; }, 0);
         renderUI(sum / votes.length, votes.length, getLocalUser());
-      }
-
-      if (buttons) {
-        buttons.addEventListener("click", function (e) {
-          var btn = e.target.closest(".rating-btn-small");
-          if (!btn) return;
-          var v = parseInt(btn.getAttribute("data-value"), 10);
-          if (v >= 1 && v <= 5) {
-            onVote(v);
-          }
-        });
       }
     }
 
