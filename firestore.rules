@@ -1,12 +1,20 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Рейтинг: общая сводка (sum, count)
+    // Рейтинг сайта: общая сводка (sum, count)
     match /stats/{document=**} {
       allow read, write: if true;
     }
-    // Голоса пользователей (по clientId)
+    // Голоса пользователей для рейтинга сайта (по clientId)
     match /votes/{userId} {
+      allow read, write: if true;
+    }
+    // Рейтинг инструкций: статистика по каждой инструкции
+    match /instructionStats/{instructionId} {
+      allow read, write: if true;
+    }
+    // Голоса пользователей для конкретных инструкций
+    match /instructionVotes/{voteId} {
       allow read, write: if true;
     }
   }

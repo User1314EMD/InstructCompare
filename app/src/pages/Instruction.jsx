@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import InstructionRating from '../components/InstructionRating'
 
 const DATA_URL = '/data/instructions.json'
 
@@ -88,6 +89,8 @@ export default function Instruction() {
           <h2>Вывод</h2>
           <p>{item.conclusion || '—'}</p>
         </section>
+
+        <InstructionRating instructionId={id} />
       </div>
     </div>
   )
