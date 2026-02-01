@@ -467,28 +467,187 @@ nav {
 }
 .instruction-back:hover { color: var(--color-accent); background: var(--color-accent-soft); }
 
-.instruction-image-wrap {
+/* Галерея фотографий инструкции */
+.instruction-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.instruction-gallery-item {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  margin-bottom: 2rem;
+  cursor: pointer;
   box-shadow: var(--shadow-card);
-}
-
-.instruction-image-wrap.instruction-image-fallback {
-  min-height: 200px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
+  aspect-ratio: 4/5;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.instruction-image-wrap.instruction-image-fallback::after {
-  content: "Нет изображения";
-  font-size: 1rem;
+
+.instruction-gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-accent);
+}
+
+.instruction-gallery-item:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.instruction-gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.instruction-gallery-item-fallback {
+  min-height: 120px;
+}
+.instruction-gallery-item-fallback::after {
+  content: "✈";
+  font-size: 1.5rem;
   color: var(--color-text-soft);
 }
 
-.instruction-image { width: 100%; max-height: 85vh; object-fit: contain; margin: 0 auto; }
+.instruction-gallery-empty {
+  grid-column: 1 / -1;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  text-align: center;
+  color: var(--color-text-soft);
+}
+
+/* Одна фотография — на всю ширину */
+.instruction-gallery:has(.instruction-gallery-item:only-child) .instruction-gallery-item {
+  grid-column: 1 / -1;
+  aspect-ratio: auto;
+  max-height: 85vh;
+}
+.instruction-gallery:has(.instruction-gallery-item:only-child) .instruction-gallery-image {
+  object-fit: contain;
+  max-height: 85vh;
+}
+
+/* Лайтбокс — увеличение по клику */
+.instruction-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.instruction-lightbox[hidden] {
+  display: none;
+}
+
+.instruction-lightbox.instruction-lightbox-open {
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+}
+
+.instruction-lightbox.instruction-lightbox-open[hidden] {
+  display: flex;
+}
+
+.instruction-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 1002;
+}
+
+.instruction-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.instruction-lightbox-content {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem 1rem;
+}
+
+.instruction-lightbox-image {
+  max-width: 100%;
+  max-height: calc(100vh - 4rem);
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Мобильная версия галереи и лайтбокса */
+@media (max-width: 640px) {
+  .instruction-gallery {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .instruction-gallery:has(.instruction-gallery-item:only-child) .instruction-gallery-item {
+    max-height: 70vh;
+  }
+  .instruction-gallery:has(.instruction-gallery-item:only-child) .instruction-gallery-image {
+    max-height: 70vh;
+  }
+
+  .instruction-gallery-item {
+    aspect-ratio: 4/5;
+    min-height: 180px;
+  }
+
+  .instruction-lightbox {
+    padding: 1rem;
+    touch-action: manipulation;
+  }
+
+  .instruction-lightbox-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 2rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .instruction-lightbox-content {
+    padding: 3rem 0.5rem 0.5rem;
+  }
+
+  .instruction-lightbox-image {
+    max-height: calc(100vh - 3rem);
+  }
+}
 
 .instruction-sections { display: flex; flex-direction: column; gap: 1.5rem; }
 

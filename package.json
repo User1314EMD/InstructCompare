@@ -1,0 +1,12 @@
+{
+  "name": "instructcompare",
+  "version": "1.0.0",
+  "private": true,
+  "description": "InstructCompare — витрина инструкций по безопасности",
+  "scripts": {
+    "dev": "npm run dev --prefix app",
+    "build": "npm run build --prefix app",
+    "preview": "npm run preview --prefix app",
+    "install:app": "npm install --prefix app"
+  }
+}
