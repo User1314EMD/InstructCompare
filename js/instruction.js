@@ -40,22 +40,40 @@
     var wrap = img && img.parentElement;
     if (wrap) wrap.classList.remove("instruction-image-fallback");
 
-    if (img && imageList.length > 0) {
-      img.style.display = "";
-      img.src = imageSrc(imageList[0]);
-      img.alt = altBase;
+    var currentIndex = 0;
+    var thumbs = [];
+
+    if (img) {
       img.onerror = function () {
         if (wrap) {
           wrap.classList.add("instruction-image-fallback");
           img.style.display = "none";
         }
       };
-      img.addEventListener("click", function () {
-        openLightbox(imageSrc(imageList[0]), altBase);
-      });
-    } else if (wrap) {
-      // Нет изображений
-      wrap.classList.add("instruction-image-fallback");
+    }
+
+    function setActive(index) {
+      if (!img || !imageList || !imageList.length) return;
+      if (index < 0 || index >= imageList.length) return;
+      currentIndex = index;
+      var src = imageSrc(imageList[index]);
+      img.style.display = "";
+      img.src = src;
+      img.alt = imageList.length > 1 ? (altBase + " — фото " + (index + 1)) : altBase;
+      if (wrap) {
+        wrap.classList.remove("instruction-image-fallback");
+      }
+      if (thumbs && thumbs.length) {
+        thumbs.forEach(function (node, i) {
+          node.classList.toggle("instruction-gallery-item-active", i === index);
+        });
+      }
+    }
+
+    if (!imageList.length) {
+      if (wrap) {
+        wrap.classList.add("instruction-image-fallback");
+      }
       if (img) img.style.display = "none";
     }
 
@@ -78,11 +96,22 @@
           };
           thumbWrap.appendChild(thumbImg);
           thumbWrap.addEventListener("click", function () {
-            openLightbox(imageSrc(path), thumbImg.alt);
+            setActive(index);
           });
+          thumbs.push(thumbWrap);
           gallery.appendChild(thumbWrap);
         });
       }
+    }
+
+    // Инициализация основного изображения (первая фотография)
+    if (img && imageList.length > 0) {
+      setActive(0);
+      img.addEventListener("click", function () {
+        // Увеличиваем текущее активное фото
+        var src = imageSrc(imageList[currentIndex] || imageList[0]);
+        openLightbox(src, img.alt || altBase);
+      });
     }
 
     // Лайтбокс
