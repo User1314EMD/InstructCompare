@@ -90,7 +90,14 @@
       imgWrap.className = "card-image-wrap";
       var img = document.createElement("img");
       img.className = "card-image";
-      img.src = imageSrc(item.image);
+
+      // Поддержка как одиночного поля image, так и массива images
+      var cover = item.image;
+      if ((!cover || cover === "") && item.images && Array.isArray(item.images) && item.images.length > 0) {
+        cover = item.images[0];
+      }
+
+      img.src = imageSrc(cover);
       img.alt = item.airline + " — " + item.aircraft;
       img.loading = "lazy";
       img.onerror = function () { imgWrap.classList.add("card-image-fallback"); };
