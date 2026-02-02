@@ -5,7 +5,7 @@
     "aircraft": "Airbus A380",
     "country": "ОАЭ",
     "year": 2024,
-    "image": "images/20260103_164051.jpg",
+    "images": ["images/emirates3801.jpg", "images/emirates3802.jpg", "images/emirates3803.jpg"],
     "description": "Светлые тона, соответствует цветовой схеме Emirates. Обложка не содержит никакой информации в отличие от других авиакомпаний. Сверху маленькие фото с запретами, нет описания. Большие блоки разделяют инструкцию на разные ситуации. Действия с детьми перемешаны с действиями для взрослых. Имеется текст на арабском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -16,7 +16,7 @@
     "aircraft": "Boeing 777-300ER",
     "country": "ОАЭ",
     "year": 2023,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/emirates7771.jpg", "images/emirates7772.jpg", "images/emirates7773.jpg"],
     "description": "Светлые тона, соответствует цветовой схеме Emirates. Обложка не содержит никакой информации в отличие от других авиакомпаний. Сверху маленькие фото с запретами, нет описания. Большие блоки разделяют инструкцию на разные ситуации. Действия с детьми перемешаны с действиями для взрослых. Имеется текст на арабском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -27,7 +27,7 @@
     "aircraft": "Boeing 737-800",
     "country": "ОАЭ",
     "year": 2023,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/fdubai1.jpg", "images/fdubai2.jpg"],
     "description": "Выполнена в зеленых цветах, соответствует цветовой схеме (?) FlyDubai. Крупные картинки, есть разделение на различные аварийные ситуации. Нет общего списка запрещенных вещей, фото с ними есть правее каждого блока. Есть отдельные инструкции для взрослых и детей. Имеется текст на арабском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -38,7 +38,7 @@
     "aircraft": "Boeing 737-800",
     "country": "Турция",
     "year": 2022,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/ajet1.jpg"],
     "description": "Выполнена в синих цветах, соответствует цветовой схеме AnodoluJet (С 2025 называется AJet). Очень мелкие картинки и мелкий текст. Разделение на разные аварийные ситуации присутствует. Есть отдельные инструкции для детей. Имеется текст на турецком и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -159,7 +159,7 @@
     "aircraft": "Airbus A320",
     "country": "Турция",
     "year": 2021,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/pegasus1.jpg", "images/pegasus2.jpg"],
     "description": "Синие тона, не особо соответствует основной цветовой схеме Pegasus (стандартные цвета - красный и желтый). Очень много маленьких картинок, разделены на различные аварийные ситуации. Есть разделение на возраста. В верхней части есть блок с запретами, нет описания. Имеется текст на турецком и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -170,7 +170,7 @@
     "aircraft": "Airbus A320ceo / neo",
     "country": "Индия",
     "year": 2024,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/airindiaex3201.jpg", "images/airindiaex3202.jpg", "images/airindiaex3203.jpg"],
     "description": "Яркая инструкция, соответствует цветовой схеме Air India Express. Различные блоки для разных возрастов и и ситуаций. Подробные инструкции для различных аварийных ситуаций. Имеется текст и на хинди, и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -181,7 +181,7 @@
     "aircraft": "Boeing 737-800",
     "country": "Индия",
     "year": 2024,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/airindiaex7371.jpg", "images/airindiaex7372.jpg"],
     "description": "Яркая инструкция, соответствует цветовой схеме Air India Express. Различные блоки для разных возрастов и и ситуаций. Имеется текст и на хинди, и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -192,7 +192,7 @@
     "aircraft": "Airbus A320",
     "country": "Индия",
     "year": 2025,
-    "images": ["images/SKM_C250i260202110501_page-0001.jpg", "images/SKM_C250i260202110600_page-0001.jpg", "images/SKM_C250i260202110601_page-0001.jpg"],
+    "images": ["images/airindia3201.jpg", "images/airindia3202.jpg", "images/airindia3203.jpg"],
     "description": "Яркая инструкция, соответствует цветовой схеме Air India. Обложка не несет какой-либо информации. Обьемные, красивые, информативные рисунки для разных ситуаций. Имеется текст и на хинди, и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
