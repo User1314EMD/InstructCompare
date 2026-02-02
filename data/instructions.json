@@ -38,7 +38,7 @@
     "aircraft": "Boeing 737-800",
     "country": "Турция",
     "year": 2022,
-    "images": ["images/ajet1.jpg"],
+    "images": ["images/ajet1.jpg", "images/ajet2.jpg"],
     "description": "Выполнена в синих цветах, соответствует цветовой схеме AnodoluJet (С 2025 называется AJet). Очень мелкие картинки и мелкий текст. Разделение на разные аварийные ситуации присутствует. Есть отдельные инструкции для детей. Имеется текст на турецком и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -49,7 +49,7 @@
     "aircraft": "Airbus A320",
     "country": "Россия",
     "year": 2022,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/aeroflot3202.jpg"],
     "description": "Светлые тона, верхняя часть - оранжевая, соответствует цветовой схеме Аэрофлота. Много текста, мало картинок. Схожа с другими инструкциями Аэрофлота. Имеется текст на русском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -104,7 +104,7 @@
     "aircraft": "Boeing 737-800",
     "country": "Россия",
     "year": 2016,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/aeroflotl7371.jpg", "images/aeroflotl7372.jpg"],
     "description": "Work in Progress",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -137,7 +137,7 @@
     "aircraft": "Boeing 737-800",
     "country": "Китай",
     "year": 2023,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/shanghai1.jpg", "images/shanghai2.jpg"],
     "description": "Бело-бежовые тона, сильно отличается от стандартной цветовой сфемы Shanghai Airlines (стандартные цвета - красный и белый). Схожа с инструкциями China Eastern (Shanghai Airlines - дочерняя компания China Eastern). Крупные картинки, краткое описание. Из уникального: есть схема со сравнением высот от аварийных выходов до земли. Имеется текст на китайском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -148,7 +148,7 @@
     "aircraft": "Airbus A321neo",
     "country": "Китай",
     "year": 2023,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/chinaeast1.jpg", "images/chinaeast2.jpg"],
     "description": "Бело-бежовые тона, сильно отличается от стандартной цветовой сфемы China Eastern (стандартные цвета - красный и синий). Схожа с инструкциями Shanghai Airlines. Крупные картинки, краткое описание. Из уникального: есть схема со сравнением высот от аварийных выходов до земли. Имеется текст на китайском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
