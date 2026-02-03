@@ -60,7 +60,7 @@
     "aircraft": "Airbus A321",
     "country": "Россия",
     "year": 2022,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/afl3211.jpg", "images/afl3212.jpg", "images/afl3213.jpg"],
     "description": "Светлые, серые тона, не особо соответствует цветовой схеме Аэрофлота (обычные цветы для Аэрофлота - синие, тут все серое и белое). Схожа с другими инструкциями Аэрофлота. Имеется текст на русском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -71,7 +71,7 @@
     "aircraft": "Airbus A321neo",
     "country": "Россия",
     "year": 2022,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/afl321n1.jpg", "images/afl321n2.jpg", "images/afl321n3.jpg"],
     "description": "Светлые, серые тона, не особо соответствует цветовой схеме Аэрофлота (обычные цветы для Аэрофлота - синие, тут все серое и белое). Много текста, мало картинок. Схожа с другими инструкциями Аэрофлота. Имеется текст на русском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -82,7 +82,7 @@
     "aircraft": "Airbus A330-300",
     "country": "Россия",
     "year": 2022,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/afl3301.jpg", "images/afl3302.jpg", "images/afl3303.jpg"],
     "description": "Светлые тона, верхняя часть - оранжевая, соответствует цветовой схеме Аэрофлота. Много текста, мало картинок. Схожа с другими инструкциями Аэрофлота. Имеется текст на русском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -93,7 +93,7 @@
     "aircraft": "Airbus A350-900",
     "country": "Россия",
     "year": 2025,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/afl3501.jpg", "images/afl3502.jpg", "images/afl3503.jpg"],
     "description": "Светлые тона, верхняя часть - синия, соответствует цветовой схеме Аэрофлота. Много текста, мало картинок. Схожа с другими инструкциями Аэрофлота. Имеется текст на русском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -115,7 +115,7 @@
     "aircraft": "Boeing 737-800",
     "country": "Россия",
     "year": 2022,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/afl7371.jpg", "images/afl7372.jpg", "images/afl7373.jpg"],
     "description": "Светлые, серые тона, не особо соответствует цветовой схеме Аэрофлота (обычные цветы для Аэрофлота - синие, тут все серое и белое). Много текста, мало картинок. Схожа с другими инструкциями Аэрофлота. Имеется текст на русском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -126,7 +126,7 @@
     "aircraft": "Boeing 777-300ER",
     "country": "Россия",
     "year": 2022,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/afl7771.jpg", "images/afl7772.jpg", "images/afl7773.jpg"],
     "description": "Светлые тона, верхняя часть - синия, соответствует цветовой схеме Аэрофлота. Много текста, мало картинок. Схожа с другими инструкциями Аэрофлота. Имеется текст на русском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
