@@ -335,7 +335,7 @@
     "aircraft": "Airbus A319",
     "country": "Индия",
     "year": 2016,
-    "images": ["images/airindial1.jpg", "images/airindial2.jpg"],
+    "images": ["images/airindial2.jpg", "images/airindial1.jpg"],
     "description": "Work in Progress",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
