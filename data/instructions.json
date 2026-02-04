@@ -49,7 +49,7 @@
     "aircraft": "Airbus A320",
     "country": "Россия",
     "year": 2022,
-    "images": ["images/aeroflot3202.jpg"],
+    "images": ["images/afl3201.jpg", "images/aeroflot3202.jpg", "images/afl3203.jpg"],
     "description": "Светлые тона, верхняя часть - оранжевая, соответствует цветовой схеме Аэрофлота. Много текста, мало картинок. Схожа с другими инструкциями Аэрофлота. Имеется текст на русском и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -203,7 +203,7 @@
     "aircraft": "Airbus A320",
     "country": "Индия",
     "year": 2022,
-    "images": ["images/vistara1.jpg"],
+    "images": ["images/vistara1.jpg", "images/vistara2.jpg"],
     "description": "Темные цвета, соответствует цветовой схеме Vistara (в 2024 году была поглашена Air India). Блок для детей слит со взрослыми. Маленькие фото с запретами, короткое описание.Имеется текст и на хинди, и на английском.",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
@@ -335,7 +335,7 @@
     "aircraft": "Airbus A319",
     "country": "Индия",
     "year": 2016,
-    "image": "https://picsum.photos/seed/instr2/800/1120",
+    "images": ["images/airindial1.jpg", "images/airindial2.jpg"],
     "description": "Work in Progress",
     "analysis": "Work in Progress",
     "conclusion": "Work in Progress"
