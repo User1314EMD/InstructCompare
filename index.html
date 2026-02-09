@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InstructCompare</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-logo">InstructCompare</a>
+      <nav>
+        <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="rating.html">Оценка</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="hero-icon">✈</span>
+      <h1>InstructCompare</h1>
+      <p>
+        Демонстрационный сайт для просмотра и сравнения инструкций по безопасности 
+        разных авиакомпаний и типов воздушных судов. Здесь можно изучить оформление, 
+        структуру и подачу информации в карточках безопасности.
+      </p>
+      <p>
+        <strong>Сайт не является аналитическим сервисом</strong> — он служит 
+        визуальной витриной и архивом для ознакомления с коллекцией.
+      </p>
+      <a href="catalog.html" class="btn">Перейти в каталог инструкций</a>
+      <div class="hero-features">
+        <div class="hero-feature">
+          <span class="hero-feature-icon">📋</span>
+          <span>31 инструкция</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature-icon">🔍</span>
+          <span>Фильтры и поиск</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature-icon">📊</span>
+          <span>Анализ и выводы</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    InstructCompare. Демонстрационный проект.
+  </footer>
+</body>
+</html>

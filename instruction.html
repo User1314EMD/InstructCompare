@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Инструкция — InstructCompare</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-logo">InstructCompare</a>
+      <nav>
+        <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="rating.html">Оценка</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="instruction-page">
+    <a href="catalog.html" class="instruction-back">← Назад в каталог</a>
+
+    <div class="instruction-image-wrap" id="image-wrap">
+      <img class="instruction-image" id="instruction-image" src="" alt="Инструкция по безопасности">
+    </div>
+
+    <div class="instruction-gallery" id="instruction-gallery" aria-label="Фотографии инструкции"></div>
+
+    <div class="instruction-lightbox" id="instruction-lightbox" role="dialog" aria-modal="true" aria-label="Увеличить фото" hidden>
+      <button type="button" class="instruction-lightbox-close" id="instruction-lightbox-close" aria-label="Закрыть">&times;</button>
+      <div class="instruction-lightbox-content">
+        <img class="instruction-lightbox-image" id="instruction-lightbox-image" src="" alt="">
+      </div>
+    </div>
+
+    <div class="instruction-sections">
+      <section class="instruction-section" id="section-description">
+        <h2>Описание</h2>
+        <div class="instruction-meta" id="instruction-meta"></div>
+        <p id="description-text"></p>
+      </section>
+
+      <section class="instruction-section" id="section-analysis">
+        <h2>Анализ</h2>
+        <p id="analysis-text"></p>
+      </section>
+
+      <section class="instruction-section" id="section-conclusion">
+        <h2>Вывод</h2>
+        <p id="conclusion-text"></p>
+      </section>
+
+      <section class="instruction-section instruction-rating-section">
+        <h2>Оцените эту инструкцию</h2>
+        <div class="instruction-rating-buttons" id="instruction-rating-buttons">
+          <button type="button" class="rating-btn-small" data-value="1">1</button>
+          <button type="button" class="rating-btn-small" data-value="2">2</button>
+          <button type="button" class="rating-btn-small" data-value="3">3</button>
+          <button type="button" class="rating-btn-small" data-value="4">4</button>
+          <button type="button" class="rating-btn-small" data-value="5">5</button>
+        </div>
+        <div class="instruction-rating-results" id="instruction-rating-results">
+          <div class="instruction-rating-avg">
+            <span class="instruction-rating-value" id="instruction-rating-avg">—</span>
+            <span class="instruction-rating-label">Средняя оценка</span>
+          </div>
+          <div class="instruction-rating-meta">
+            <span id="instruction-rating-total">0 оценок</span>
+            <span class="instruction-rating-yours" id="instruction-rating-yours"></span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    InstructCompare. Демонстрационный проект.
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/instruction.js"></script>
+  <script src="js/instruction-rating.js"></script>
+</body>
+</html>
